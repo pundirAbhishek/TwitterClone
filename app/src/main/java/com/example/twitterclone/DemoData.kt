@@ -1,5 +1,6 @@
 package com.example.twitterclone
 
+import com.example.twitterclone.model.Fleet
 import com.example.twitterclone.model.Tweet
 
 class DemoData {
@@ -14,6 +15,12 @@ class DemoData {
         12,
         15,
         "Twitter for web"
+    )
+
+    val fleet = Fleet(
+        1,
+        "The Verge",
+        R.drawable.p1,
     )
 
     val tweetList = listOf(
@@ -216,5 +223,85 @@ class DemoData {
         )
 
 
+    )
+
+
+    val fleetsList = listOf(
+        fleet,
+        fleet.copy(
+            id = 2,
+            author = "Google",
+            authorImageId = R.drawable.p2,
+        ),
+        fleet.copy(
+            id = 3,
+            author = "Amazon",
+            authorImageId = R.drawable.p2,
+        ),
+        fleet.copy(
+            id = 4,
+            author = "Facebook",
+            authorImageId = R.drawable.p3,
+        ),
+        fleet.copy(
+            id = 5,
+            author = "Instagram",
+            authorImageId = R.drawable.p4,
+        ),
+        fleet.copy(
+            id = 6,
+            author = "Twitter",
+            authorImageId = R.drawable.p5,
+        ),
+        fleet.copy(
+            id = 7,
+            author = "Netflix",
+            authorImageId = R.drawable.p6,
+        ),
+        fleet.copy(
+            id = 8,
+            author = "Tesla",
+            authorImageId = R.drawable.p7,
+        ),
+        fleet.copy(
+            id = 9,
+            author = "Microsoft",
+            authorImageId = R.drawable.p8,
+        ),
+        fleet.copy(
+            id = 3,
+            author = "Tencent",
+            authorImageId = R.drawable.p9,
+        ),
+        fleet.copy(
+            id = 4,
+            author = "Snapchat",
+            authorImageId = R.drawable.p10,
+        ),
+        fleet.copy(
+            id = 5,
+            author = "Snapchat",
+            authorImageId = R.drawable.p11,
+        ),
+        fleet.copy(
+            id = 6,
+            author = "Tiktok",
+            authorImageId = R.drawable.p1,
+        ),
+        fleet.copy(
+            id = 7,
+            author = "Samsung",
+            authorImageId = R.drawable.p2,
+        ),
+        fleet.copy(
+            id = 8,
+            author = "Youtube",
+            authorImageId = R.drawable.p3,
+        ),
+        fleet.copy(
+            id = 9,
+            author = "Gmail",
+            authorImageId = R.drawable.p4,
+        )
     )
 }

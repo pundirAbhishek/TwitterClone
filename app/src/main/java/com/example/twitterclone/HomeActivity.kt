@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
@@ -23,39 +24,42 @@ import com.example.twitterclone.ui.theme.twitterColor
 fun TwitterHome() {
     Scaffold(
         topBar = {
-            TopAppBar(
-                title = {
-                    Icon(
-                        painter = painterResource(id = R.drawable.ic_twitter),
-                        contentDescription = "Twitter logo",
-                        tint = twitterColor,
-                        modifier = Modifier.fillMaxWidth()
-                    )
-                },
-                navigationIcon = {
-                    Image(
-                        painter = painterResource(id = R.drawable.p3),
-                        contentDescription = "User Image",
-                        modifier = Modifier
-                            .padding(horizontal = 8.dp, vertical = 4.dp)
-                            .size(32.dp)
-                            .clip(CircleShape)
-                    )
-                },
-                actions = {
-                    Icon(
-                        imageVector = Icons.Default.StarBorder,
-                        contentDescription = "Bookmark Icon",
-                        modifier = Modifier.padding(horizontal = 8.dp)
-                    )
-                },
-                backgroundColor = MaterialTheme.colors.surface,
-                contentColor = MaterialTheme.colors.onSurface,
-            )
+            Column() {
+                TopAppBar(
+                    title = {
+                        Icon(
+                            painter = painterResource(id = R.drawable.ic_twitter),
+                            contentDescription = "Twitter logo",
+                            tint = twitterColor,
+                            modifier = Modifier.fillMaxWidth()
+                        )
+                    },
+                    navigationIcon = {
+                        Image(
+                            painter = painterResource(id = R.drawable.p3),
+                            contentDescription = "User Image",
+                            modifier = Modifier
+                                .padding(horizontal = 8.dp, vertical = 4.dp)
+                                .size(32.dp)
+                                .clip(CircleShape)
+                        )
+                    },
+                    actions = {
+                        Icon(
+                            imageVector = Icons.Default.StarBorder,
+                            contentDescription = "Bookmark Icon",
+                            modifier = Modifier.padding(horizontal = 8.dp)
+                        )
+                    },
+                    backgroundColor = MaterialTheme.colors.surface,
+                    contentColor = MaterialTheme.colors.onSurface,
+                )
+                Fleets()
+            }
         },
         floatingActionButton = {
             FloatingActionButton(
-                onClick = { /*TODO*/ },
+                onClick = {},
                 backgroundColor = twitterColor
             ) {
                 Icon(
@@ -64,49 +68,101 @@ fun TwitterHome() {
                 )
             }
         },
-        bottomBar = {
-            Column() {
-                Divider(color = Color.Gray, thickness = 0.5.dp)
-                TabRow(selectedTabIndex = 0, backgroundColor = MaterialTheme.colors.surface) {
-                    Tab(
-                        selected = true,
-                        onClick = { },
-                        modifier = Modifier.padding(12.dp)
-                    ) {
-                        Icon(imageVector = Icons.Default.Home, contentDescription = null)
-                    }
-                    Tab(
-                        selected = true,
-                        onClick = { },
-                        modifier = Modifier.padding(12.dp)
-                    ) {
-                        Icon(imageVector = Icons.Default.Search, contentDescription = null)
-                    }
-                    Tab(
-                        selected = true,
-                        onClick = { },
-                        modifier = Modifier.padding(12.dp)
-                    ) {
-                        Icon(imageVector = Icons.Default.Notifications, contentDescription = null)
-                    }
-                    Tab(
-                        selected = true,
-                        onClick = { },
-                        modifier = Modifier.padding(12.dp)
-                    ) {
-                        Icon(imageVector = Icons.Default.Email, contentDescription = null)
-                    }
 
+//        {
+//            Column() {
+//                Divider(color = Color.Gray, thickness = 0.5.dp)
+//                TabRow(selectedTabIndex = 0, backgroundColor = MaterialTheme.colors.surface) {
+//                    Tab(
+//                        selected = true,
+//                        onClick = { },
+//                        modifier = Modifier.padding(12.dp)
+//                    ) {
+//                        Icon(imageVector = Icons.Default.Home, contentDescription = null)
+//                    }
+//                    Tab(
+//                        selected = true,
+//                        onClick = { },
+//                        modifier = Modifier.padding(12.dp)
+//                    ) {
+//                        Icon(imageVector = Icons.Default.Search, contentDescription = null)
+//                    }
+//                    Tab(
+//                        selected = true,
+//                        onClick = { },
+//                        modifier = Modifier.padding(12.dp)
+//                    ) {
+//                        Icon(imageVector = Icons.Default.Notifications, contentDescription = null)
+//                    }
+//                    Tab(
+//                        selected = true,
+//                        onClick = { },
+//                        modifier = Modifier.padding(12.dp)
+//                    ) {
+//                        Icon(imageVector = Icons.Default.Email, contentDescription = null)
+//                    }
+//
+//                }
+//            }
+//        }
+        bottomBar = {
+            BottomAppBar(
+                content = {
+                    BottomNavigation() {
+                        BottomNavigationItem(
+                            icon = {
+                                Icon(Icons.Filled.Home , "Home")
+                            },
+                            selected = true,
+                            onClick = {},
+                            alwaysShowLabel = false
+                        )
+
+                        BottomNavigationItem(
+                            icon = {
+                                Icon(Icons.Filled.Search , "Search")
+                            },
+                            selected = false,
+                            onClick = {},
+                            alwaysShowLabel = false
+                        )
+
+                        BottomNavigationItem(
+                            icon = {
+                                Icon(Icons.Filled.Notifications ,  "Notification")
+                            },
+                            selected = false,
+                            onClick = {},
+                            alwaysShowLabel = false
+                        )
+
+                        BottomNavigationItem(
+                            icon = {
+                                Icon(Icons.Filled.Email , "Messages")
+                            },
+                            selected = false,
+                            onClick = {},
+                            alwaysShowLabel = false
+                        )
+                    }
                 }
-            }
+            )
         }
     )
-    {
-        Column() {
-            TwitterItem()
-            TwitterItem()
-            TwitterItem()
-            TwitterItem()
+    { padding ->
+        LazyColumn(modifier = Modifier.padding(padding)) {
+            item {
+                TwitterItem()
+            }
+            item {
+                TwitterItem()
+            }
+            item {
+                TwitterItem()
+            }
+            item {
+                TwitterItem()
+            }
         }
 
     }
