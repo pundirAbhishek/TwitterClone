@@ -68,43 +68,6 @@ fun TwitterHome() {
                 )
             }
         },
-
-//        {
-//            Column() {
-//                Divider(color = Color.Gray, thickness = 0.5.dp)
-//                TabRow(selectedTabIndex = 0, backgroundColor = MaterialTheme.colors.surface) {
-//                    Tab(
-//                        selected = true,
-//                        onClick = { },
-//                        modifier = Modifier.padding(12.dp)
-//                    ) {
-//                        Icon(imageVector = Icons.Default.Home, contentDescription = null)
-//                    }
-//                    Tab(
-//                        selected = true,
-//                        onClick = { },
-//                        modifier = Modifier.padding(12.dp)
-//                    ) {
-//                        Icon(imageVector = Icons.Default.Search, contentDescription = null)
-//                    }
-//                    Tab(
-//                        selected = true,
-//                        onClick = { },
-//                        modifier = Modifier.padding(12.dp)
-//                    ) {
-//                        Icon(imageVector = Icons.Default.Notifications, contentDescription = null)
-//                    }
-//                    Tab(
-//                        selected = true,
-//                        onClick = { },
-//                        modifier = Modifier.padding(12.dp)
-//                    ) {
-//                        Icon(imageVector = Icons.Default.Email, contentDescription = null)
-//                    }
-//
-//                }
-//            }
-//        }
         bottomBar = {
             BottomAppBar(
                 content = {
