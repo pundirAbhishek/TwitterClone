@@ -44,7 +44,7 @@ fun TwitterItem() {
                 retweetCount = tweet.retweetCount,
                 likesCount = tweet.likesCount
             )
-            Divider(thickness = 0.5.dp, color = Color.LightGray)
+//            Divider(thickness = 0.5.dp, color = Color.LightGray)
         }
     }
 }
@@ -71,10 +71,9 @@ fun NameAndHandle(name: String, handleName: String, time: String, isVerified: Bo
             modifier = Modifier.padding(end = 4.dp)
         )
         if (isVerified) {
-            Icon(
-                imageVector = Icons.Default.CheckCircle,
-                contentDescription = null,
-                tint = twitterColor,
+            Image(
+                painter = painterResource(id = R.drawable.ic_verified),
+                contentDescription = "Verified",
                 modifier = Modifier
                     .size(18.dp)
                     .align(Alignment.CenterVertically)
