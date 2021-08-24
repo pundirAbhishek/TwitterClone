@@ -1,18 +1,14 @@
 package com.example.twitterclone
 
-import android.content.res.Resources
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -25,37 +21,7 @@ fun TwitterHome() {
     Scaffold(
         topBar = {
             Column() {
-                TopAppBar(
-                    title = {
-                        Image(
-                            painter = painterResource(id = R.drawable.ic_twitter),
-                            contentDescription = "Twitter Trends",
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .size(24.dp)
-
-                        )
-                    },
-                    navigationIcon = {
-                        Image(
-                            painter = painterResource(id = R.drawable.p3),
-                            contentDescription = "User Image",
-                            modifier = Modifier
-                                .padding(start = 8.dp)
-                                .size(28.dp)
-                                .clip(CircleShape)
-                        )
-                    },
-                    actions = {
-                        Image(
-                            painter = painterResource(id = R.drawable.ic_trends),
-                            contentDescription = "Twitter Trends",
-                            modifier = Modifier.size(28.dp).padding(end = 4.dp)
-                        )
-                    },
-                    backgroundColor = MaterialTheme.colors.surface,
-                    contentColor = MaterialTheme.colors.onSurface,
-                )
+                TopBar()
                 Fleets()
                 Divider(thickness = 0.5.dp, color = Color.LightGray)
             }
@@ -64,22 +30,7 @@ fun TwitterHome() {
             Fab()
         },
         bottomBar = {
-            BottomAppBar(backgroundColor = MaterialTheme.colors.surface) {
-                Column {
-                    Divider(thickness = 0.5.dp, color = Color.LightGray)
-                    Row(
-                        horizontalArrangement = Arrangement.SpaceAround,
-                        modifier = Modifier
-                            .weight(1f)
-                            .fillMaxWidth()
-                    ) {
-                        BottomBarIcon(R.drawable.ic_home_selected)
-                        BottomBarIcon(R.drawable.ic_search)
-                        BottomBarIcon(R.drawable.ic_notifications)
-                        BottomBarIcon(R.drawable.ic_dm)
-                    }
-                }
-            }
+            BottomBar()
         }
     )
     { padding ->
