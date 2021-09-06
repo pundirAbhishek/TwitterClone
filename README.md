@@ -6,3 +6,4 @@ This is a Twitter Clone App, demonstrating modern development practices like Vie
 **This app is under development for a newer version using the latest android practices and features.**
 
 
+![TwitterImage](https://user-images.githubusercontent.com/25431838/132250480-564c33d3-7507-402b-a511-e6b14b492058.png)
