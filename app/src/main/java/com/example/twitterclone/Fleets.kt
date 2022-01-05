@@ -89,7 +89,8 @@ fun SelfFleetImage(image: Painter) {
                     .size(60.dp)
                     .aspectRatio(1f, matchHeightConstraintsFirst = true)
                     .padding(5.dp)
-                    .clip(CircleShape)
+                    .clip(CircleShape),
+                contentScale = ContentScale.Crop
             )
             Box(modifier = Modifier
                 .padding(4.dp)
@@ -102,7 +103,7 @@ fun SelfFleetImage(image: Painter) {
                         .size(15.dp)
                         .border(width = 1.dp, color = Color.Black, shape = CircleShape)
                         .clip(CircleShape)
-                        .background(twitterColor)
+                        .background(twitterColor),
                 )
             }
         }

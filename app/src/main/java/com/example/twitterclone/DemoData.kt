@@ -20,7 +20,7 @@ class DemoData {
     val fleet = Fleet(
         1,
         "The Verge",
-        R.drawable.p1,
+        R.drawable.self,
     )
 
     val tweetList = listOf(
@@ -29,29 +29,30 @@ class DemoData {
             id = 2,
             author = "Google",
             handle = "@google",
-            authorImageId = R.drawable.p1,
-            tweetImages = listOf(R.drawable.food16),
+            authorImageId = R.drawable.google,
+            tweetImages = listOf(R.drawable.compose),
             time = "11m"
         ),
         tweet.copy(
             id = 3,
             author = "Amazon",
             handle = "@Amazon",
-            authorImageId = R.drawable.p2,
+            text = "Amazon.com, Inc. is an American multinational conglomerate which focuses on e-commerce, cloud computing, digital streaming, and artificial intelligence.",
+            authorImageId = R.drawable.amazon,
             time = "1h"
         ),
         tweet.copy(
             id = 4,
             author = "Facebook",
             handle = "@Facebook",
-            authorImageId = R.drawable.p3,
+            authorImageId = R.drawable.fb,
             time = "1h"
         ),
         tweet.copy(
             id = 5,
             author = "Instagram",
             handle = "@Instagram",
-            authorImageId = R.drawable.p4,
+            authorImageId = R.drawable.instagram,
             tweetImages = listOf(R.drawable.food15),
             time = "11m"
         ),
@@ -231,27 +232,27 @@ class DemoData {
         fleet.copy(
             id = 2,
             author = "Google",
-            authorImageId = R.drawable.p2,
+            authorImageId = R.drawable.google,
         ),
         fleet.copy(
             id = 3,
             author = "Amazon",
-            authorImageId = R.drawable.p2,
+            authorImageId = R.drawable.amazon,
         ),
         fleet.copy(
             id = 4,
             author = "Facebook",
-            authorImageId = R.drawable.p3,
+            authorImageId = R.drawable.fb,
         ),
         fleet.copy(
             id = 5,
             author = "Instagram",
-            authorImageId = R.drawable.p4,
+            authorImageId = R.drawable.instagram,
         ),
         fleet.copy(
             id = 6,
             author = "Twitter",
-            authorImageId = R.drawable.p5,
+            authorImageId = R.drawable.twitter,
         ),
         fleet.copy(
             id = 7,

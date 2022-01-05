@@ -22,12 +22,13 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.twitterclone.model.Tweet
 import com.example.twitterclone.ui.theme.twitterColor
 
-val tweet = DemoData().tweetList[1]
+//val tweet = DemoData().tweetList[1]
 
 @Composable
-fun TwitterItem() {
+fun TwitterItem(tweet : Tweet) {
     Row() {
         AuthorImage(imageId = tweet.authorImageId)
         Column(modifier = Modifier.padding(8.dp)) {
@@ -253,5 +254,5 @@ fun TweetIconSection(commentsCount: Int, retweetCount: Int, likesCount: Int) {
 @Preview
 @Composable
 fun TwitterItemPreview() {
-    TwitterItem()
+    TwitterItem(DemoData().tweet)
 }

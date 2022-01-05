@@ -4,6 +4,7 @@ import androidx.annotation.DrawableRes
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
@@ -35,24 +36,11 @@ fun TwitterHome() {
     )
     { padding ->
         LazyColumn(modifier = Modifier.padding(padding)) {
-            item {
-                TwitterItem()
-                Divider(thickness = 0.5.dp, color = Color.LightGray)
-            }
-            item {
-                TwitterItem()
-                Divider(thickness = 0.5.dp, color = Color.LightGray)
-            }
-            item {
-                TwitterItem()
-                Divider(thickness = 0.5.dp, color = Color.LightGray)
-            }
-            item {
-                TwitterItem()
-                Divider(thickness = 0.5.dp, color = Color.LightGray)
-            }
+           items(DemoData().tweetList){ tweet ->
+               TwitterItem(tweet)
+               Divider(thickness = 0.5.dp, color = Color.LightGray)
+           }
         }
-
     }
 }
 
